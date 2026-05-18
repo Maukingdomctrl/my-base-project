@@ -18,8 +18,8 @@ contract FeeTreasury is Owned, ReentrancyGuard {
 
     uint16 public constant MAX_BPS = 10_000; // 100%
 
-    uint16 public feeBps;          // protocol fee in basis points
-    address public feeRecipient;   // destination for withdrawn fees
+    uint16 public feeBps; // protocol fee in basis points
+    address public feeRecipient; // destination for withdrawn fees
 
     constructor(address initialOwner, address initialRecipient, uint16 initialFeeBps) Owned(initialOwner) {
         if (initialRecipient == address(0)) revert InvalidRecipient();

@@ -32,11 +32,7 @@ contract BountyEscrow is Pausable, ReentrancyGuard {
     State public state;
     uint256 public fundedAmount;
 
-    constructor(
-        address initialOwner,
-        address _sponsor,
-        address _hunter
-    ) Pausable(initialOwner) {
+    constructor(address initialOwner, address _sponsor, address _hunter) Pausable(initialOwner) {
         if (_sponsor == address(0) || _hunter == address(0)) revert InvalidAddress();
         if (_sponsor == _hunter) revert InvalidAddress();
 
